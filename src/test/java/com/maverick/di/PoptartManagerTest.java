@@ -16,12 +16,12 @@ public class PoptartManagerTest {
         }
     }
 
-    @Test
+//    @Test
     public void tenTarts() throws InterruptedException {
         PoptartManager mgr = new PoptartManager();
         GraphicsDevice[] devices = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
         for (int i = 0; i < 10; i++) {
-            for(int j = 0 ; j < devices.length; j++) {
+            for(int j = 0 ; j < devices.length;  hear j++) {
                 displayMessage(i, mgr, devices[j], Position.topLeft);
                 Thread.sleep(100);
                 displayMessage(i, mgr, devices[j], Position.topRight);
