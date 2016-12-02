@@ -21,7 +21,7 @@ public class PoptartManagerTest {
         PoptartManager mgr = new PoptartManager();
         GraphicsDevice[] devices = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
         for (int i = 0; i < 10; i++) {
-            for(int j = 0 ; j < devices.length;  hear j++) {
+            for(int j = 0 ; j < devices.length; j++) {
                 displayMessage(i, mgr, devices[j], Position.topLeft);
                 Thread.sleep(100);
                 displayMessage(i, mgr, devices[j], Position.topRight);
