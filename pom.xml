@@ -1,19 +1,58 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!-- Desktop Integration - Librarary that provides various platform specific 
+	desktop integrations via JNA. Copyright © 2012 SSHTOOLS Limited (support@sshtools.com) 
+	This program is free software: you can redistribute it and/or modify it under 
+	the terms of the GNU Lesser General Public License as published by the Free 
+	Software Foundation, either version 3 of the License, or (at your option) 
+	any later version. This program is distributed in the hope that it will be 
+	useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+	or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License 
+	for more details. You should have received a copy of the GNU Lesser General 
+	Public License along with this program. If not, see <http://www.gnu.org/licenses/>. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sshtools</groupId>
 	<artifactId>di</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>3.0.0</version>
 	<name>Desktop Integration</name>
 	<description>Librarary that provides various platform specific desktop integrations via JNA.</description>
 	<url>http://www.sshtools.com</url>
 	<packaging>jar</packaging>
+	<inceptionYear>2012</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>The GNU Lesser General Public License, Version 3.0</name>
+			<url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/sshtools/damage</url>
+		<connection>scm://github.com/sshtools/damage.git</connection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>lee</id>
+			<name>Lee David Painter</name>
+			<email>lee@sshtools.com</email>
+		</developer>
+		<developer>
+			<id>brett</id>
+			<name>Brett Smith</name>
+			<email>brett@hypersocket.com</email>
+		</developer>
+	</developers>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -25,25 +64,6 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
-
-	<licenses>
-		 <license>
-    			<name>GNU General Public License (GPL)</name>
-			<url>http://www.gnu.org/licenses/gpl.txt</url>
-		</license>
-	</licenses>
-	<scm>
-		<url>https://github.com/sshtools/jfreedesktop</url>
-		<connection>https://github.com/sshtools/jfreedesktop.git</connection>
-	</scm>
-	<developers>
-		<developer>
-			<id>brett</id>
-			<name>Brett Smith</name>
-			<email>brett@nervepoint.com</email>
-		</developer>
-	</developers>
-
 
 	<profiles>
 		<profile>
@@ -59,7 +79,6 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.1</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
@@ -69,6 +88,17 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh-sshtools</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
@@ -109,7 +139,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>2.9.1</version>
+					<version>3.0.1</version>
 					<executions>
 						<execution>
 							<id>javadoc-jar</id>
@@ -124,7 +154,7 @@
 									<!-- include ONLY dependencies I control -->
 									<dependencySourceInclude>com.sshtools:*</dependencySourceInclude>
 								</dependencySourceIncludes>
-								<additionalparam>-Xdoclint:none</additionalparam>
+								<doclint>none</doclint>
 							</configuration>
 						</execution>
 					</executions>
@@ -148,7 +178,7 @@
 					<artifactId>license-maven-plugin</artifactId>
 					<version>2.3</version>
 					<configuration>
-						<header>templates/GPL.txt</header>
+						<header>templates/LGPL.txt</header>
 						<properties>
 							<owner>SSHTOOLS Limited</owner>
 							<email>support@sshtools.com</email>
