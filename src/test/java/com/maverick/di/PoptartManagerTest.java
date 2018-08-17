@@ -23,6 +23,7 @@ import java.awt.GraphicsEnvironment;
 import javax.swing.ImageIcon;
 
 import org.junit.Assume;
+import org.junit.Test;
 
 public class PoptartManagerTest {
 
@@ -33,7 +34,7 @@ public class PoptartManagerTest {
         }
     }
 
-//    @Test
+    @Test
     public void tenTarts() throws InterruptedException {
     	Assume.assumeTrue(!"true".equals(System.getProperty("java.awt.headless")));
         PoptartManager mgr = new PoptartManager();

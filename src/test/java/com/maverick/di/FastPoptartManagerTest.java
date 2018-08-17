@@ -35,9 +35,9 @@ public class FastPoptartManagerTest {
     public void tenTarts() throws InterruptedException {
     	Assume.assumeTrue(!"true".equals(System.getProperty("java.awt.headless")));
         PoptartManager mgr = new PoptartManager();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             mgr.popup("Contact " + i + " has just signed on", new ImageIcon(getClass().getResource("/images/large/warning.png")), null);
-            Thread.sleep(1);
+            Thread.sleep(100);
         }
         // Popups should hide
         Thread.sleep(12000);

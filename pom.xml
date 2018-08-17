@@ -21,9 +21,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sshtools</groupId>
 	<artifactId>di</artifactId>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<name>Desktop Integration</name>
-	<description>Librarary that provides various platform specific desktop integrations via JNA.</description>
+	<description>Library that provides various platform specific desktop integrations via JNA.</description>
 	<url>http://www.sshtools.com</url>
 	<packaging>jar</packaging>
 	<inceptionYear>2012</inceptionYear>
@@ -38,7 +38,7 @@
 
 	<scm>
 		<url>https://github.com/sshtools/damage</url>
-		<connection>scm://github.com/sshtools/damage.git</connection>
+		<connection>scm://github.com/sshtools/di.git</connection>
 	</scm>
 
 	<developers>
@@ -93,12 +93,6 @@
 					<plugin>
 						<groupId>org.sonatype.plugins</groupId>
 						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh-sshtools</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
